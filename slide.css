@@ -1,0 +1,214 @@
+div.slideItens {
+    max-width: 100%;
+    display: block;
+}
+
+.slide {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+}
+
+.slideItens {
+    position: relative;
+    grid-area: 1/1;
+}
+
+.slideItens>* {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 15px;
+    grid-area: 1/1;
+    max-width: 0%;
+}
+
+#slideNav {
+    display: grid;
+    grid-area: 1/1;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* aqui define quantas colunas tem.*/
+    z-index: 1;
+    grid-template-rows: auto 1fr;
+}
+
+#slideNav button {
+    opacity: 1;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    grid-template-rows: auto 1fr;
+    border: none;
+}
+
+button.slidePrev {
+    background: url("images/slider/btnPrev.png");
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: left center;
+}
+
+button.slideNext {
+    background: url("images/slider/btnNext.png");
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: right center;
+}
+
+button.slideZoom {
+    background: url("images/slider/btnZoom.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
+.slideItens>.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: initial;
+    margin-top: 20px;
+    max-width: 60%;
+}
+
+div.slide {
+    text-align: center;
+}
+
+.slideThumb {
+    display: flex;
+    grid-column: 1 / 4;
+}
+
+.slideThumb>span {
+    flex: 1;
+    display: block;
+    height: 5px;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.slideThumb>span.active {
+    background: #f8c418bd
+}
+
+
+/* Style the Image Used to Trigger the Modal */
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (Image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+/* Add Animation - Zoom in the Modal */
+
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    button.slidePrev {
+        background-size: 30%;
+    }
+    button.slideNext {
+        background-size: 30%;
+    }
+    button.slideZoom {
+        background-size: 20%;
+    }
+}
