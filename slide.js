@@ -30,6 +30,23 @@ class SlideReceitas {
 
     }
     zoom() {
+        var modal = document.getElementById("myModal")
+        var btn = document.querySelector('.slideZoom')
+        var span = document.getElementsByClassName("close")[0]
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
     }
     addNavigation() {
@@ -58,6 +75,7 @@ class SlideReceitas {
         this.addThumbItens()
         this.activeSlide(0)
         this.addNavigation()
+
     }
 }
 new SlideReceitas('slide')
