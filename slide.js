@@ -1,6 +1,6 @@
 class SlideReceitas {
     constructor(id) {
-        this.slide = document.querySelector('[data-slide = "slide"]')
+        this.slide = document.querySelector(`[data-slide="${id}"]`);
         this.init()
         this.active = 0
     }
@@ -35,8 +35,10 @@ class SlideReceitas {
     addNavigation() {
         const nextBtn = this.slide.querySelector('.slideNext')
         const prevBtn = this.slide.querySelector('.slidePrev')
+        const zoomBtn = this.slide.querySelector('.slideZoom')
         prevBtn.addEventListener('click', this.prev)
         nextBtn.addEventListener('click', this.next)
+        zoomBtn.addEventListener('click', this.zoom)
 
     }
 
@@ -50,6 +52,7 @@ class SlideReceitas {
 
         this.next = this.next.bind(this)
         this.prev = this.prev.bind(this)
+        this.zoom = this.zoom.bind(this)
         this.itens = this.slide.querySelectorAll('.slideItens > *')
         this.thumb = this.slide.querySelector('.slideThumb')
         this.addThumbItens()
