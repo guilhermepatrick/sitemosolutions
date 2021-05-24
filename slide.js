@@ -77,7 +77,6 @@ class SlideReceitas {
         this.addThumbItens()
         this.activeSlide(0)
         this.addNavigation()
-
     }
 }
 new SlideReceitas('slide')
