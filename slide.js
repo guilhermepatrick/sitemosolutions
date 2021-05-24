@@ -32,14 +32,15 @@ class SlideReceitas {
     zoom() {
         var modal = document.getElementById("myModal")
         var btn = document.querySelector('.slideZoom')
-        var span = document.getElementsByClassName("close")[0]
+        var modalImagem = document.getElementById("imagemModal")
+        var modalLegenda = document.getElementById("legendaModal")
+        var imgAtiva = document.getElementById("imagem" + Number(this.active))
+        modalImagem.src = imgAtiva.src
+        modalLegenda.innerHTML = imgAtiva.alt
+
 
         btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
+            modal.style.display = "flex";
         }
 
         window.onclick = function(event) {
@@ -57,10 +58,11 @@ class SlideReceitas {
         nextBtn.addEventListener('click', this.next)
         zoomBtn.addEventListener('click', this.zoom)
 
+
     }
 
     addThumbItens() {
-        this.itens.forEach(() => (this.thumb.innerHTML += '<span> </span>'))
+        this.itens.forEach(() => (this.thumb.innerHTML += `<span></span>`))
         this.thumbItens = Array.from(this.thumb.children)
         console.log(this.thumbItens)
 
