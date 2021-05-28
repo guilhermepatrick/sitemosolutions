@@ -47,6 +47,10 @@ button.slidePrev {
     background-position: left center;
 }
 
+.button:hover {
+    display: none;
+}
+
 button.slideNext {
     background: url("images/slider/btnNext.png");
     background-repeat: no-repeat;
@@ -122,14 +126,14 @@ div.slide {
 
 .modalContent img {
     margin: auto;
-    width: 80%;
+    width: 100%;
     border-radius: 10px 10px 00px 00px;
 }
 
 .modalContent p {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 100%;
     max-width: 1000px;
     text-align: center;
     color: black;
@@ -213,6 +217,6 @@ div.slide {
         opacity: 1;
         pointer-events: initial;
         margin-top: 30px;
-        max-width: 70%;
+        max-width: 80%;
     }
 }
