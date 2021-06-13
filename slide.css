@@ -47,10 +47,6 @@ button.slidePrev {
     background-position: left center;
 }
 
-.button:hover {
-    display: none;
-}
-
 button.slideNext {
     background: url("images/slider/btnNext.png");
     background-repeat: no-repeat;
