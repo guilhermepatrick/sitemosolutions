@@ -10,6 +10,7 @@ class SlideReceitas {
         this.itens[index].classList.add('active')
         this.thumbItens.forEach(item => item.classList.remove('active'))
         this.thumbItens[index].classList.add('active')
+        this.autoSlide();
     }
 
     prev() {
@@ -66,6 +67,9 @@ class SlideReceitas {
         this.thumbItens = Array.from(this.thumb.children)
         console.log(this.thumbItens)
 
+    }
+    autoSlide() {
+        setTimeout(this.next, 5000)
     }
     init() {
 
