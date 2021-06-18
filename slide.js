@@ -16,16 +16,21 @@ class SlideReceitas {
     prev() {
 
         if (this.active > 0) {
+
             this.activeSlide(this.active - 1)
+            this.autoSlide();
         } else {
             this.activeSlide(this.itens.length - 1)
+            this.autoSlide();
         }
 
     }
     next() {
         if (this.active < this.itens.length - 1) {
+            this.autoSlide();
             this.activeSlide(this.active + 1)
         } else {
+            this.autoSlide();
             this.activeSlide(0)
         }
 

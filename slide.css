@@ -18,7 +18,7 @@ div.slideItens {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    border-radius: 15px;
+    border-radius: 5px;
     grid-area: 1/1;
     max-width: 0%;
 }
