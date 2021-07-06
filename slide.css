@@ -100,7 +100,7 @@ div.slide {
     background-image: linear-gradient( #fbb034 0%, #F9CA2B 50%);
     border-radius: 3px;
     transform: translateX(-100%);
-    animation: thumb 5s linear forwards;
+    animation: thumb 2s linear forwards;
 }
 
 .modal {
@@ -145,10 +145,6 @@ div.slide {
     padding-bottom: 5px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
     border-radius: 0px 0px 10px 10px;
-}
-
-.close {
-    display: none;
 }
 
 @keyframes thumb {

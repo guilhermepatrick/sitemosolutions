@@ -18,19 +18,20 @@ class SlideReceitas {
         if (this.active > 0) {
 
             this.activeSlide(this.active - 1)
-            this.autoSlide();
+
         } else {
             this.activeSlide(this.itens.length - 1)
-            this.autoSlide();
+
         }
 
     }
     next() {
+
+
         if (this.active < this.itens.length - 1) {
-            this.autoSlide();
+
             this.activeSlide(this.active + 1)
         } else {
-            this.autoSlide();
             this.activeSlide(0)
         }
 
@@ -70,11 +71,13 @@ class SlideReceitas {
     addThumbItens() {
         this.itens.forEach(() => (this.thumb.innerHTML += `<span></span>`))
         this.thumbItens = Array.from(this.thumb.children)
-        console.log(this.thumbItens)
+
 
     }
     autoSlide() {
-        setTimeout(this.next, 5000)
+        let tempoSlide = setTimeout(this.next, 2000)
+
+
     }
     init() {
 
